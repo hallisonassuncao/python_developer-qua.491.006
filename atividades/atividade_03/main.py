@@ -1,19 +1,29 @@
-# importa biblioteca
-import math
 import os
-
-def calcular_area_circulo(raio):
-  return math.pi * (raio ** 2)
 import math
 
-def calcular_comprimento_circunferencia(raio):
-  comprimento = 2 * math.pi * raio
-  return comprimento
+while True:
+    os.system('cls' if os.name == 'nt' else 'clear')#serve para os dois sistemas#
 
-# Exemplo de uso
-raio = int(input("Informe o raio do circulo que deseja calcular: "))
-area = calcular_area_circulo(raio)
-os.system("cls")
-print(f"A área do círculo com raio {raio} é: {area:.2f}: ")
-comprimento = calcular_comprimento_circunferencia(raio)
-print(f"O comprimento da circunferência com raio {raio} é: {comprimento:.2f}")
+    print("== MENU ==")
+    print("1 - Calcular área de um círculo")
+    print("2 - Calcular circunferência")
+    print("3 - Sair do programa")
+
+    escolha = input("Escolha uma opção: ").strip()
+
+    if escolha == "1":
+        raio = float(input("Digite o raio do círculo: ").replace(",", "."))
+    
+        area = math.pi * raio ** 2
+        print(f"A área do círculo é: {area:.2f}")
+    elif escolha == "2":
+        raio = float(input("Digite o raio do círculo: "))
+        circunferencia = 2 * math.pi * raio
+        print(f"A circunferência é: {circunferencia:.2f}")
+    elif escolha == "3":
+        print("Saindo do programa...")
+        break
+    else:
+        print("Opção inválida.")
+
+    input("\nPressione Enter para continuar...")
