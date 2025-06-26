@@ -2,7 +2,7 @@
 import os
 import random
 
-nomes = []  # não se esqueça de inicializar sua lista!
+nomes = []  
 
 while True:
     print("1 - Inserir nome na lista")
