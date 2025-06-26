@@ -1,12 +1,3 @@
-# TODO - atividade : crie um programa que receba de um professor varias notas de uma aluno de 0 a 10
-# ( não importa quantas notas). ao final do programa , a media das notas deverar se calculada e informada, e em seguida o programa ira
-# informar se o aluno:
-
-# foi aprovado, caso a media for maior ou igual a 7
-# ficou em recuperacao , caso media for entre 5 e 7
-# Ficou reprovado , caso media for menor que 5
-
-# Lista de Notas
 notas = []
 
 print("Digite as notas do aluno (de 0 a 10). Digite 'sair' para finalizar.")
