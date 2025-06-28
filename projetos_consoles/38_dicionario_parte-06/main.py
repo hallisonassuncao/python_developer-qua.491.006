@@ -9,7 +9,7 @@ usuario = {
 for chave in usuario:
     print(f"{chave.capitalize()}: {usuario.get(chave)}")
 
-print("-" * 40)
+print("-" * 35)
 
 chave_para_alterar = input("Qual chave deseja alterar? ").strip().lower()
 
@@ -19,7 +19,7 @@ if chave_para_alterar in usuario:
 else:
     print("Chave inexistente.")
 
-print("-" * 40)
+print("-" * 35)
 
 for chave in usuario:
     print(f"{chave.capitalize()}: {usuario.get(chave)}")

@@ -1,7 +1,7 @@
 # Dicionário inicial
 usuario = {
     'nome': "Hallison",
-    'idade': 40,
+    'idade': 35,
     'email': "hallison@gmail.com"
 }
 
@@ -11,7 +11,7 @@ for chave in usuario:
 
 usuario['profissão'] = input("\nInforme a profissão: ").strip()
 
-print("\n" + "-"*40)
+print("\n" + "-"*35)
 print("Dados atualizados:")
 for chave in usuario:
     print(f"{chave.capitalize()}: {usuario.get(chave)}")

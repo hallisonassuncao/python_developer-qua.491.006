@@ -1,7 +1,7 @@
 # dicionario
 usuario = {
-    'nome': "Hallison Assunção",
-    'idade': 40,
+    'nome': "Hallison",
+    'idade': 35,
     'email': "hallison@gmail.com",
     'profissão': "Tecnico ti"
 

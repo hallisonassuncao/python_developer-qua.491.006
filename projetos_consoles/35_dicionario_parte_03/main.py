@@ -1,7 +1,7 @@
 usuario = {
-    'nome': "leticia Camila",
+    'nome': "leticia",
     'idade': 36,
-    'email': "leticia.camilaa@gmail.com",
+    'email': "leticia@gmail.com",
     'profissão': "DBA"
 
 }
