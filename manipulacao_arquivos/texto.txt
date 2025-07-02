@@ -1,0 +1,2 @@
+Este texto será lido por um programa feito na  liguagem Python por mim
+This text will be read by a program written in Python by me
