@@ -1,74 +1,51 @@
+
 import json
 import os
 
-def ler_arquivo_json(nome_arquivo):
-    try:
-        with open(f"{nome_arquivo}.json", "r", encoding="utf-8") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return []
+pessoa = {}
 
-def salvar_arquivo_json(nome_arquivo, dados):
-    with open(f"{nome_arquivo}.json", "w", encoding="utf-8") as f:
-        json.dump(dados, f, ensure_ascii=False, indent=4)
+try:
+    arquivo = input("Informe o arquivo: ").strip().lower()
 
-def coletar_dados():
-    campos = {
-        "nome": ("Informe o nome: ", lambda x: x.strip().title()),
-        "idade": ("Informe sua idade: ", int),
-        "cpf": ("Informe o CPF: ", lambda x: x.strip()),
-        "rg": ("Informe o RG: ", lambda x: x.strip()),
-        "data_nasc": ("Informe a data de nascimento: ", lambda x: x.strip()),
-        "sexo": ("Informe o gênero: ", lambda x: x.strip()),
-        "signo": ("Informe o signo: ", lambda x: x.strip().capitalize()),
-        "mae": ("Informe o nome da mãe: ", lambda x: x.strip().title()),
-        "pai": ("Informe o nome do pai: ", lambda x: x.strip().title()),
-        "email": ("Informe o email: ", lambda x: x.strip().lower()),
-        "senha": ("Informe a senha: ", lambda x: x.strip()),
-        "cep": ("Informe o CEP: ", lambda x: x.strip().lower()),
-        "endereco": ("Informe o endereço: ", lambda x: x.strip().title()),
-        "numero": ("Informe o número: ", int),
-        "bairro": ("Informe o bairro: ", lambda x: x.strip().title()),
-        "cidade": ("Informe a cidade: ", lambda x: x.strip().title()),
-        "estado": ("Informe o estado: ", lambda x: x.strip().upper()),
-        "telefone_fixo": ("Informe o telefone fixo: ", lambda x: x.strip()),
-        "celular": ("Informe o celular: ", lambda x: x.strip()),
-        "altura": ("Informe a altura (ex: 1.75): ", float),
-        "peso": ("Informe o peso (ex: 70.5): ", float),
-        "tipo_sanguineo": ("Informe o tipo sanguíneo: ", lambda x: x.strip().upper()),
-        "cor": ("Informe a cor: ", lambda x: x.strip())
-    }
+    with open(f"{arquivo}.json", "r", encoding="utf-8") as f:
+        pessoas = json.load(f)
 
-    dados_pessoa = {}
-    for campo, (mensagem, conversao) in campos.items():
-        try:
-            valor = input(mensagem)
-            dados_pessoa[campo] = conversao(valor)
-        except Exception:
-            print(f"Valor inválido para o campo {campo}. Tente novamente.")
-            return None
+    # usuário informa os dados da nova pessoa
+    pessoa['nome'] = input("informe o nome: ").strip().title()
+    pessoa['idade'] = int(input("informe a idade: "))
+    pessoa['cpf'] = input("informe o CPF: ").strip()
+    pessoa['rg'] = input("informe o RG: ").strip()
+    pessoa['data_nasc'] = input("informe a data de nascimento: ").strip()
+    pessoa['sexo'] = input("informe o genero: ").strip()
+    pessoa['signo'] = input("informe o signo: ").strip().capitalize()
+    pessoa['mae'] = input("informe o nome da mãe: ").strip().title()
+    pessoa['pai'] = input("informe o nome do pai: ").strip().title()
+    pessoa['email'] = input("informe o email: ").strip().lower()
+    pessoa['senha'] = input("informe a senha: ")
+    pessoa['endereco'] = input("informe o endereço: ").strip().title()
+    pessoa['numero'] = int(input("informe o numero: "))
+    pessoa['bairro'] = input("informe o bairro: ").strip().capitalize()
+    pessoa['cidade'] = input("informe a cidade: ").strip().title()
+    pessoa['estado'] = input("informe o estado: ").strip().upper()
+    pessoa['telefone_fixo'] = input("informe o telefone: ").strip()
+    pessoa['celular'] = input("informe o celular: ").strip()
+    pessoa['altura'] = float(input("informe a altura: ").replace(",", "."))
+    pessoa['peso'] = float(input("informe o peso: ").replace(",", "."))
+    pessoa['tipo_sanguineo'] = input("informe o tipo sanguineo: ").strip().capitalize()
+    pessoa['cor'] = input("informe a cor: ").strip()
 
-    return dados_pessoa
+    pessoas.append(pessoa)
 
-def exibir_pessoas(lista):
-    print(f"\n{'-'*25} LISTA DE PESSOAS {'-'*25}\n")
-    for pessoa in lista:
-        for chave, valor in pessoa.items():
-            print(f"{chave.capitalize()}: {valor}")
-        print('-' * 50)
+    with open(f"{arquivo}.json", "w", encoding="utf-8") as f:
+        json.dump(pessoas, f, ensure_ascii=False, indent=4)
 
-def main():
-    try:
-        nome_arquivo = input("Informe o nome do arquivo (sem extensão): ").strip().lower()
-        lista_pessoas = ler_arquivo_json(nome_arquivo)
-        
-        nova_pessoa = coletar_dados()
-        if nova_pessoa:
-            lista_pessoas.append(nova_pessoa)
-            salvar_arquivo_json(nome_arquivo, lista_pessoas)
-            exibir_pessoas(lista_pessoas)
-    except Exception as e:
-        print(f"Não foi possível inserir a pessoa: {e}")
+    with open(f"{arquivo}.json", "r", encoding="utf-8") as f:
+        pessoas = json.load(f)
+    print(f"{'-'*20} LISTA DE PESSOAS {'-'*20}")
+    for pessoa in pessoas:
+        for chave in pessoas:
+            print(f"{chave.capitalize()}: {pessoa.get(chave)}")
+        print('-'*58)
 
-if __name__ == "__main__":
-    main()
+except Exception as e:
+    print(f"Não foi possível inserir pessoa. {e}")
