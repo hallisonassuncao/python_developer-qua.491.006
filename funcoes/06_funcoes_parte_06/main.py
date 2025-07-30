@@ -3,7 +3,6 @@ def fatorial(n):
     # n!
     return 1 if n == 0 else n * fatorial(n - 1)
 
-# importa módulo (se necessário — você pode remover essa linha se não usar funções do módulo)
 import modulo as mo
 
 # algoritmo principal
