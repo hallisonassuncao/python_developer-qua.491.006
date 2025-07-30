@@ -23,5 +23,5 @@ if __name__ == "__main__":
             print(f"Fatorial de {n} é {resultado}")
         except ValueError:
             print("Entrada inválida. Tente novamente com um número inteiro.")
-            print
+            
             
