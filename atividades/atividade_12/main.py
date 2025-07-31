@@ -19,4 +19,4 @@ if __name__ == "__main__":
         print(f"\n Área do círculo: {area:.2f}")
         print(f" Circunferência do círculo: {circ:.2f}")
     except Exception as e:
-        print(f"❌ Erro ao calcular: {e}")
+        print(f" Erro ao calcular: {e}")
