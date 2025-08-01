@@ -13,5 +13,8 @@ class Pessoa:
 
 # programa principal
 if __name__ == "__main__":
-    # instaciar classe
+    # instanciar classe
     usuario = Pessoa()
+
+    # objeto se apresenta
+    usuario.apresentar()
