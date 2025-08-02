@@ -87,7 +87,7 @@ while True:
     elif escolha == "4":
         minha_conta.imprimir_extrato()
     elif escolha == "5":
-        print("👋 Obrigado por usar o banco. Até logo!")
+        print("Obrigado por usar o banco. Até logo!")
         break
     else:
         print("Opção inválida. Tente novamente.")
