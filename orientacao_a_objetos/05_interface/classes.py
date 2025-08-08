@@ -29,61 +29,61 @@ class Conta(ABC):
 
 class ContaCorrente(Conta):
     def __init__(self, titular, cpf, agencia, saldo):
-        self.__titular = titular
-        self.__cpf = cpf
-        self.__agencia = agencia
-        self.__conta = Conta
+        self.titular = titular
+        self.cpf = cpf
+        self.agencia = agencia
+        self.conta = Conta
         super().__init__(saldo)
 
 
     @property
     def titular(self, titular):
-        return self.__titular
+        return self.titular
 
     @titular.setter
     def titular(self,titular):
-        self.__titular = titular
+        self.titular = titular
 
     @property
     def cpf(self, cpf):
-        return self.__cpf
+        return self.cpf
 
     @cpf.setter
     def cpf(self, cpf):
-        self.__cpf = cpf
+        self.cpf = cpf
 
     @property
     def agencia(self, agencia):
-        return self.__agencia
+        return self.agencia
 
     @titular.setter
     def agencia(self, agencia):
-        self.__agencia = agencia    
+        self.agencia = agencia    
 
     @property
     def conta(self, conta):
-        return self.__conta
+        return self.conta
 
     @titular.setter
     def conta(self, conta):
-        self.__conta = conta  
+        self.conta = conta  
 
     # metodos de interface
     def consultar_dados(self):
         print(f"{'-'*20} DADOS DA CONTA {'-'*20}\n")
-        print(f"Titular da conta: {self.__titular}")
-        print(f"CPF do titular: {self.__cpf}")
-        print(f"Agencia: {self.__agencia}")
-        print(f"Numero da conta: {self.__conta}")
-        print(f"Saldo da conta: {self.__saldo:2f}")
+        print(f"Titular da conta: {self.titular}")
+        print(f"CPF do titular: {self.cpf}")
+        print(f"Agencia: {self.agencia}")
+        print(f"Numero da conta: {self.conta}")
+        print(f"Saldo da conta: {self.saldo:2f}")
 
     def depositar(self, valor):
-        self.__saldo += valor
-        return self.__saldo
+        self.saldo += valor
+        return self.saldo
 
     def sacar(self, valor):
-        self.__saldo -= valor
-        return self.__saldo
+        self.saldo = valor
+        return self.saldo
     
 
           
