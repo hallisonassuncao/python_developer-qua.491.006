@@ -6,12 +6,12 @@ def main():
         titular="Leticia", 
         cpf="123.123.122-89", 
         agencia="0001", 
-        numero_conta="0312214-12",  # Corrigido aqui
+        numero_conta="0312214-12",  
         saldo=900.0
     )
 
     cc.consultar_dados()
-    print(f"\nSaldo: R$ {cc.saldo:.2f}")  # Corrigido aqui
+    print(f"\nSaldo: R$ {cc.saldo:.2f}")  
 
 if __name__ == "__main__":
     main()
