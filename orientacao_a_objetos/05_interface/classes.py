@@ -1,98 +1,91 @@
-from abc import ABC
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 
-# classe abstrata
-
+# Classe abstrata
 class Conta(ABC):
     @abstractmethod
     def __init__(self, saldo):
-        # atributos private
-        self.__saldo = saldo
-        
-    # metodos get e set
+        self.__saldo = saldo  # atributo privado
+
+    # Getter
     @property
     def saldo(self):
         return self.__saldo
-    
-    @saldo.setter
-    def saldo(self, saldo):
-        self._saldo = saldo    
 
-    # metodos de açao
+    # Setter
+    @saldo.setter
+    def saldo(self, valor):
+        self.__saldo = valor
+
+    # Métodos abstratos
     @abstractmethod
     def consultar_dados(self):
         pass
 
     @abstractmethod
-    def depositar(self, valor):  
-        pass  
+    def depositar(self, valor):
+        pass
 
+# Classe concreta
 class ContaCorrente(Conta):
-    def __init__(self, titular, cpf, agencia, saldo):
-        self.titular = titular
-        self.cpf = cpf
-        self.agencia = agencia
-        self.conta = Conta
+    def __init__(self, titular, cpf, agencia, numero_conta, saldo):
+        self._titular = titular
+        self._cpf = cpf
+        self._agencia = agencia
+        self._numero_conta = numero_conta
         super().__init__(saldo)
 
-
+    # Getters e Setters
     @property
-    def titular(self, titular):
-        return self.titular
+    def titular(self):
+        return self._titular
 
     @titular.setter
-    def titular(self,titular):
-        self.titular = titular
+    def titular(self, valor):
+        self._titular = valor
 
     @property
-    def cpf(self, cpf):
-        return self.cpf
+    def cpf(self):
+        return self._cpf
 
     @cpf.setter
-    def cpf(self, cpf):
-        self.cpf = cpf
+    def cpf(self, valor):
+        self._cpf = valor
 
     @property
-    def agencia(self, agencia):
-        return self.agencia
+    def agencia(self):
+        return self._agencia
 
-    @titular.setter
-    def agencia(self, agencia):
-        self.agencia = agencia    
+    @agencia.setter
+    def agencia(self, valor):
+        self._agencia = valor
 
     @property
-    def conta(self, conta):
-        return self.conta
+    def numero_conta(self):
+        return self._numero_conta
 
-    @titular.setter
-    def conta(self, conta):
-        self.conta = conta  
+    @numero_conta.setter
+    def numero_conta(self, valor):
+        self._numero_conta = valor
 
-    # metodos de interface
+    # Implementação dos métodos abstratos
     def consultar_dados(self):
-        print(f"{'-'*20} DADOS DA CONTA {'-'*20}\n")
+        print(f"{'-'*20} DADOS DA CONTA {'-'*20}")
         print(f"Titular da conta: {self.titular}")
         print(f"CPF do titular: {self.cpf}")
-        print(f"Agencia: {self.agencia}")
-        print(f"Numero da conta: {self.conta}")
-        print(f"Saldo da conta: {self.saldo:2f}")
+        print(f"Agência: {self.agencia}")
+        print(f"Número da conta: {self.numero_conta}")
+        print(f"Saldo da conta: R$ {self.saldo:.2f}")
 
     def depositar(self, valor):
-        self.saldo += valor
+        if valor > 0:
+            self.saldo += valor
+        else:
+            print("Valor de depósito inválido.")
         return self.saldo
 
     def sacar(self, valor):
-        self.saldo = valor
+        if 0 < valor <= self.saldo:
+            self.saldo -= valor
+        else:
+            print("Saldo insuficiente ou valor inválido.")
         return self.saldo
-    
-
-          
-          
-
-    
-
-
-    
-
-
-
