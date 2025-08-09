@@ -73,14 +73,15 @@ class Pessoa:
     def salario(self, salario):
         self.__salario = salario
 
-    # Método para exibir os dados da pessoa
     def exibir_dados(self):
-        print(f"{'-'*20} DADOS PESSOAIS {'-'*20}")
-        print(f"Nome: {self.nome}")
-        print(f"CPF: {self.cpf}")
-        print(f"E-mail: {self.email}")
-        print(f"Profissão: {self.profissao}")
-        print(f"Telefone: {self.telefone}")
-        print(f"Endereço: {self.endereco}")
-        print(f"Salário: R$ {self.salario:.2f}")
+        print("DADOS DA CONTA:\n")
+        print(f"Nome do titular da conta: {self.nome}.")
+        print(f"CPF do titular da conta: {self.cpf}.")
+        print(f"Email do titular da conta: {self.email}.")
+        print(f"Profissao do titular da conta: {self.profissao}.")
+        print(f"Telefone titular da conta: {self.telefone}.")
+        print(f"Endereco do titular da conta: {self.endereco}.")
+        print(f"Salario do titular da conta: {self.salario}.")
+        super().exibir_dados()
+
 

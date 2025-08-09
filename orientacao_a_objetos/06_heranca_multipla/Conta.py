@@ -38,21 +38,21 @@ class Conta(iConta):
         else:
             print("Saldo não pode ser negativo.")
 
-    
+    # Método para depositar
     def depositar(self, valor):
         if valor > 0:
             self.__saldo += valor
         else:
             print("Valor de depósito deve ser positivo.")
 
-    
+    # Método para sacar
     def sacar(self, valor):
         if 0 < valor <= self.__saldo:
             self.__saldo -= valor
         else:
             print("Saldo insuficiente ou valor inválido.")
 
-    
+    # Método para exibir dados da conta
     def exibir_dados(self):
         print(f"Agência: {self.agencia}")
         print(f"Número: {self.numero}.")
