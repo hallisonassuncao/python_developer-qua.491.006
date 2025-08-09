@@ -71,6 +71,5 @@ def main():
         else:
             print("Opção inválida. Tente novamente.")
 
-# Executa o programa principal
 if __name__ == "__main__":
     main()
