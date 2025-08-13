@@ -8,3 +8,11 @@ class Pessoa:
         return f"Ola, meu nome é {self.nome} e tenho {self.idade} anos."
     def __len__(self):
         return self.idade
+    
+    def __len__(self):
+        return self.idade
+    
+    def __del__(self):
+        print(f"Objeto {self.nome} destruindo com sucesso.")
+
+        
