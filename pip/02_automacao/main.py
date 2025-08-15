@@ -6,7 +6,7 @@ def main():
     auto.press("win")
     auto.write("edge")
     auto.press("enter")
-    auto.hotkey("alt", "space")
+    auto.hotkey("alt",)
     auto.press("k")
     auto.write("github.com")
     auto.press("enter")
