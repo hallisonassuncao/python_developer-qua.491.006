@@ -161,3 +161,30 @@ def alterar_dados(session, Pessoa):
     except Exception as e:
         print(f"Não foi possível alterar! Erro: {e}")
         session.rollback()
+
+def excluir_pessoa(session, Pessoa):
+    try:
+        id_pessoa = input("Informe o ID da pessoa que deseja excluir: ").strip()
+
+        pessoa = session.query(Pessoa).filter_by(id_pessoa=id_pessoa).first()
+
+        if not pessoa:
+            print("Pessoa não encontrada!")
+            return
+
+        print(f"\nVocê está prestes a excluir:\n")
+        print(f"ID: {pessoa.id_pessoa}")
+        print(f"Nome: {pessoa.nome}")
+        print(f"E-mail: {pessoa.email}")
+        print(f"Data de Nasc.: {pessoa.data_nasc.strftime('%d/%m/%Y')}")
+        confirmacao = input("Confirma a exclusão? (s/n): ").strip().lower()
+
+        if confirmacao == "s":
+            session.delete(pessoa)
+            session.commit()
+            print("Pessoa excluída com sucesso!")
+        else:
+            print("Exclusão cancelada.")
+    except Exception as e:
+        print(f"Não foi possível excluir! Erro: {e}")
+        session.rollback()
