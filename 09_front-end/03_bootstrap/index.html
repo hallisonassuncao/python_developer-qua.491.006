@@ -57,16 +57,71 @@
 
     <!-- container -->
     <div class="container">
-        <h1>Formulário</h1>
-        <hr>
+        <h1 class="text-light">Formulário</h1>
+        <hr class="text-light">
         <form action="" method="">
             <!-- row -->
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-8">
+                    <!-- Campo Nome -->
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-default">
+                        <span class="input-group-text" id="inputGroup-sizing-nome">Nome</span>
+                        <input type="text" class="form-control" aria-label="Nome"
+                            aria-describedby="inputGroup-sizing-nome" placeholder="Digite seu nome completo">
+                    </div>
+
+                    <!-- Campo Endereço -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-endereco">Endereço</span>
+                        <input type="text" class="form-control" aria-label="Endereço"
+                            aria-describedby="inputGroup-sizing-endereco" placeholder="Rua, número, bairro">
+                    </div>
+
+                    <!-- Campo CEP -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-cep">CEP</span>
+                        <input type="text" class="form-control" aria-label="CEP"
+                            aria-describedby="inputGroup-sizing-cep" placeholder="00000-000">
+                    </div>
+
+                    <!-- Campo Cidade -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-cidade">Cidade</span>
+                        <input type="text" class="form-control" aria-label="Cidade"
+                            aria-describedby="inputGroup-sizing-cidade" placeholder="Digite sua cidade">
+                    </div>
+
+                    <!-- Campo País -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-pais">País</span>
+                        <input type="text" class="form-control" aria-label="País"
+                            aria-describedby="inputGroup-sizing-pais" placeholder="Digite seu país">
+                    </div>
+
+                    <!-- Campo Telefone -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-telefone">Telefone</span>
+                        <input type="tel" class="form-control" aria-label="Telefone"
+                            aria-describedby="inputGroup-sizing-telefone" placeholder="(00) 00000-0000">
+                    </div>
+
+                    <!-- Campo E-mail -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-email">E-mail</span>
+                        <input type="email" class="form-control" aria-label="E-mail"
+                            aria-describedby="inputGroup-sizing-email" placeholder="seuemail@exemplo.com">
+                    </div>
+
+                    <!-- Campo Sexo -->
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelectSexo">Sexo</label>
+                        <select class="form-select" id="inputGroupSelectSexo" aria-label="Sexo">
+                            <option selected>Escolha...</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Outro">Outro</option>
+                            <option value="Prefiro não dizer">Prefiro não dizer</option>
+                        </select>
                     </div>
                 </div>
             </div>
